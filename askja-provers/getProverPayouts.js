@@ -5,18 +5,18 @@ const arr = [];
 const totalReward = 25000; // 25000 USDC
 let totalBlocks = 0;
 
-function isWhatPercentOf(x, y) {
+function isWhatPercentOf(x, y) 
     return (x / y);
-  }
+
 
 fs.createReadStream("./provers.csv")
   .pipe(parse())
   .on("data", function (row) {
     if(row[0] === "0x0000000000000000000000000000000000000000") return;
-    const obj = {
+    const obj 
         address: row[0],
         blocks: Number(row[1])
-    };
+   
     totalBlocks = totalBlocks + Number(row[1]);
     arr.push(obj);
   }).on("end", function () {
